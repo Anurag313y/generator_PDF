@@ -1,6 +1,8 @@
 import cors from 'cors';
 import express from 'express';
 import authRoutes from './routes/authRoutes.js';
+import adminAuthRoutes from './routes/adminAuthRoutes.js';
+import adminUsersRoutes from './routes/adminUsersRoutes.js';
 import invoiceRoutes from './routes/invoiceRoutes.js';
 
 const app = express();
@@ -40,6 +42,8 @@ app.get('/api/health', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/admin/auth', adminAuthRoutes);
+app.use('/api/admin/users', adminUsersRoutes);
 app.use('/api/invoices', invoiceRoutes);
 
 app.use((req, res) => {
