@@ -12,6 +12,7 @@ export interface AuthResponse {
 }
 
 export interface PdfFormData {
+  eventName: string;
   name: string;
   email: string;
   phone: string;
@@ -27,6 +28,13 @@ export interface PdfRecord extends PdfFormData {
   createdAt: string;
   updatedAt: string;
 }
+
+export type EventsListMeta = {
+  page: number;
+  limit: number;
+  total: number;
+  totalPages?: number;
+};
 
 export interface DashboardStats {
   total: number;

@@ -147,6 +147,7 @@ export async function generateA4PdfBytes(input: PdfInput): Promise<Uint8Array> {
 
   // Body
   drawSectionTitle("Sheet Details");
+  drawField("Event Name", (input as any).eventName ?? "");
   drawField("Name", input.name);
   drawField("Email", input.email);
   drawField("Phone", input.phone);
